@@ -11,7 +11,9 @@ AppSurfer APIs are currently private. To get access to APIs, contact with us at 
 
 Using this API app publishers can add, edit or remove apps from AppSurfer.
 
-Base URL - https://api.appsurfer.com/v1/publishers
+Base URL - https://api.appsurfer.com
+
+All below paths to be used with this URL.
 
 ## Authentication - 
 
@@ -23,9 +25,10 @@ auth_key need to be sent in all request headers for authentication.
 
 ### 1.1 Get Access Token - 
 
-URL - /v1/publishers/apps/access_token
+Path - /v1/publishers/apps/access_token
 Method - GET
 Params -
+
 <table>
   <tr>
     <th> Param </th>
@@ -78,6 +81,7 @@ Params -
     <td>key</td>
     <td>string</td>
     <td>Required. Get it in access_token API</td>
+  </tr>
   <tr>
     <td>AWSAccessKeyId</td>
     <td>string</td>
@@ -128,6 +132,7 @@ Response -
 URL - /v1/publishers/apps
 Method - PUT
 Params - 
+
 <table>
   <tr>
     <th>Param </th><th> Type </th><th> Description </th>
