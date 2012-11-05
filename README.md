@@ -26,7 +26,9 @@ auth_key need to be sent in all request headers for authentication.
 ### 1.1 Get Access Token - 
 
 Path - /v1/publishers/apps/access_token
+
 Method - GET
+
 Params -
 
 <table>
@@ -68,7 +70,9 @@ Params -
 ### 1.2 Upload File - 
 
 URL - Found from step 1 as s3_url
+
 Method - POST
+
 Params - 
 
 <table>
@@ -130,7 +134,9 @@ Response -
 ### 1.3 Update App Details -
 
 URL - /v1/publishers/apps
+
 Method - PUT
+
 Params - 
 
 <table>
@@ -170,10 +176,21 @@ Response -
       "widget_url": "http://api.appsurfer.com/widget/37f7735d0-04d0-0130-ac48-00163sde4c2006"
     }
 
+### 1.4 Update App Details -
+
+URL - /v1/publishers/apps/:app_uid
+Method - DELETE
+Params - app_uid in url
+
+Use with care. This will delete the app and all history related with app including number of sessions played and other stats. This can't be undone.
+
+
 ## 2. Get widget code -
 
 URL - /v1/publisher/apps/:app_uid/widget
+
 Method - GET
+
 Params - 
 
 | Param | Type | Description |
@@ -190,7 +207,9 @@ Response -
 ## 3. Get Surf it button code - 
 
 URL - /v1/publisher/apps/:app_uid/surfit_button/:type
+
 Method - GET
+
 Params - 
 
 <table>
