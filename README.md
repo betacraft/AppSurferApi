@@ -179,7 +179,9 @@ Response -
 ### 1.4 Update App Details -
 
 URL - /v1/publishers/apps/:app_uid
+
 Method - DELETE
+
 Params - app_uid in url
 
 Use with care. This will delete the app and all history related with app including number of sessions played and other stats. This can't be undone.
