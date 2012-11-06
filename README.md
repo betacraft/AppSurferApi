@@ -23,9 +23,13 @@ auth_key need to be sent in all request headers for authentication.
 
 ## 1. Add App -
 
+Uploading of APK happens in two steps - in first step, you should a request to appsurfer api and get signature and other params required for reqeusting to s3.  In second step, you have to directly upload the file to s3, all required things for successful upload will be available in response of first step. If file is successfully uploaded to s3, it will redirect again to AppSurfer app, on redirection validations will be done on apk file.
+
+If you want to change apk file for existing app, same steps should be followed except that - app_uid should be provided in first step request.
+
 ### 1.1 Get Access Token - 
 
-Path - /v1/publishers/apps/access_token
+Path - /v1/publisher/apps/get_token
 
 Method - GET
 
@@ -125,11 +129,17 @@ Params -
 
 Response - 
 
+If any http error happens while uploading to s3, it will indicate it with proper http response code without redirect to appsurfer app.
+
+On successful upload, amazon will redirect to AppSurfer app. If apk passes all validations, then it will respond as -
+
     {
       "success": true,
       "app_uid": "cdb0e5b0-aef9-eeee-53ee-1230000041d3",
       "widget_url": "http://www.appsurfer.com/widget/cdb0e5b0-aef9-eeee-53ee-1230000041d3"
     }
+
+If validation fails on apk, response will contain success false with all validation errors.
 
 ### 1.3 Update App Details -
 
@@ -195,9 +205,23 @@ Method - GET
 
 Params - 
 
-| Param | Type | Description |
-| app_uid | string | needs to be present in URL |
-| autoplay | boolean | Default false. |
+<table>
+  <tr>
+    <td>Param </td>
+    <td> Type </td>
+    <td> Description </td>
+  </tr>
+  <tr>
+    <td> app_uid </td>
+    <td> string </td>
+    <td> needs to be present in URL </td>
+  </tr>
+  <tr>
+    <td> autoplay </td>
+    <td> boolean </td>
+    <td> Default false. </td>
+  </tr>
+</table>
 
 Response - 
 
@@ -205,6 +229,7 @@ Response -
       "success": true,
       "widget_code": "<iframe src='http://www.appsurfer.com/widget/cdb0e5bd0-aef9-012f-53be-1231400041ds3?phone_align=left&scroll=false&tour=true&action=widget&controller=api%2Fv1%2Fpublisher%2Fapps&id=cdb0e5b0-aef9-012f-53be-1231400041d3', style='width:620px; height:620px;border:none;' frameBorder:'none' ALLOWTRANSPARENCY='true'></iframe>\n    "
     }
+
 
 ## 3. Get Surf it button code - 
 
