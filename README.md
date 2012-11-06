@@ -143,7 +143,7 @@ If validation fails on apk, response will contain success false with all validat
 
 ### 1.3 Update App Details -
 
-URL - /v1/publishers/apps
+URL - /v1/publisher/apps
 
 Method - PUT
 
@@ -188,7 +188,7 @@ Response -
 
 ### 1.4 Update App Details -
 
-URL - /v1/publishers/apps/:app_uid
+URL - /v1/publisher/apps/:app_uid
 
 Method - DELETE
 
