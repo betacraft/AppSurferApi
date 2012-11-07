@@ -57,17 +57,22 @@ Params -
   </tr>
 </table>
 
-Params - 
+E.g.
+
+    curl -H "auth_key: c0c40350-asdf-0130-850c-22000a9d050a" "http://api.appsurfer.com/v1/publisher/apps/get_token?name=Githubs&apk_name=githubs.apk"
+
+
+Response - 
 
      {
       "key": "tmp/76/sample.apk",
       "AWSAccessKeyId": "AbbbbbbbbbbbbQ",
       "success_action_redirect": "http://api.appsurfer.com/v1/publisher/apps/uploaded/123123?apk_name=sample.apk&app_name=sample&app_uid=cdb0e5b0-eeee-012f-53be-1231400041d3",
-      "bucket": "cloudbucket",
+      "bucket": "cloudbuckset",
       "acl": "private",
-      "policy": "eyJleHBpcmFdd0aW9uIjoiMjAxMi0xMC0zMVQwNjoyNzozNS4wMDBaIiwiY29uZGl0aW9ucyI6W3siYnbGUuYXBrIn0seyJhY2wiOiJwcml2YXRlIn0seyJzdWNjZXNzX2FjdGlvbl9yZWRpcmVjdCI6Imh0dHA6Ly9kZXZhcGkuYXBwc3VyZmVyLmNvbasdfTodzMDAwL3YxL3B1Ymxpc2hlci9hcwHBzL3VwbG9hZGVkLzc2P2Fwa19uYW1lPXNhbXBsZS5hcGsmYXBwX25hbWU9c2FtcGxlJmFwcF91aWQ9Y2RiMGU1YjAtYWVmOS0wMTJmLTUzYmUtMTIzMTQwMDA0MWQzIn1dasdfasdffQ",
-      "signature": "zWdeogmMj2EXwwQdZskwSHRiqo8zeB1/ss2c=",
-      "s3_url": "https://cloud.s3.amazonaws.com"
+      "policy": "eyJleHBpcmFdd0aW9sIjoiMjAxMi0xMC0zMVQwNjoyNzozNS4wMDBaIiwiY29uZGl0aW9ucyI6W3siYnbGUuYXBrIn0seyJhY2wiOiJwcml2YXRlIn0seyJzdWNjZXNzX2FjdGlvbl9yZWRpcmVjdCI6Imh0dHA6Ly9kZXZhcGkuYXBwc3VyZmVyLmNvbasdfTodzMDAwL3YxL3B1Ymxpc2hlci9hcwHBzL3VwbG9hZGVkLzc2P2Fwa19uYW1lPXNhbXBsZS5hcGsmYXBwX25hbWU9c2FtcGxlJmFwcF91aWQ9Y2RiMGU1YjAtYWVmOS0wMTJmLTUzYmUtMTIzMTQwMDA0MWQzIn1dasdfasdffQ",
+      "signature": "zWdesogmMj2EXwwQdZsskwSHRiqo8zeB1/ss2c=",
+      "s3_url": "https://droidcloud.s3.amazonaws.com"
      }
 
 
@@ -126,6 +131,18 @@ Params -
   </tr>
 </table>
 
+E.g.
+
+Make sure that client making request should be able to follow redirects. On POST to s3, it does 303 GET redirect to rails app.
+
+    curl -X POST -F "key=tmp/228/github.apk"\
+                 -F "AWSAccessKeyId=AKIsdAJTL35BC2OZ7FZublisher/apps/uploaded/228?apk_name=githubs.apk&app_name=Githubs"\
+                 -F "bucket=droidcloud"\
+                 -F "acl=private"\
+                 -F "policy=esyJleHBpcmF0aW9uIjoiMjAxMi0xMS0wNlQxMTozMzoxNy4wMDBaIiwiY29uZGl0aW9ucyI6W3siYnVja2V0IjoiZHJvaWRjbG91ZC1zdGFnaW5nIn0seyJrZXkiOiJ0bXAvMjI4L2dpdGh1Yi5hcGsifSx7ImFjbCI6InByaXZhdGUifSx7InN1Y2Nlc3NfYWN0aW9uX3JlZGlyZWN0IjoiaHR0cDovL3ByZWFwaS5hcHBzdXJmZXIuY29tL3YxL3B1Ymxpc2hlci9hcHBzL3VwbG9hZGVkLzIyOD9hcGtfbmFtZT1naXRodWIuYXBrJmFwcF9uYW1lPUdpdGh1YiJ9XX0="\
+                 -F "signature=/T7AnK3NkT2sYReBfM0oyMeaa+Vc="\
+                 -F "file=@githubs.apk"\
+                 -L "https://droidcloud.s3.amazonaws.com"
 
 Response - 
 
@@ -143,7 +160,7 @@ If validation fails on apk, response will contain success false with all validat
 
 ### 1.3 Update App Details -
 
-URL - /v1/publisher/apps
+URL - /v1/publisher/apps/:app_uid
 
 Method - PUT
 
@@ -177,6 +194,10 @@ Params -
   <tr>
 </table>
 
+E.g.
+
+    curl -X PUT -H "auth_key: c0c40350-0a16-0130-850c-22000a9d050a"\
+                --data "name=gihtubs&description=githubs_app_desc&published=false&socially_shareable=false&default_layout=false&market_button=false" "http://api.appsurfer.com/v1/publisher/apps/f9dce550-0a3a-0130-e0e8-12313d053c1b"
 
 Response - 
   
@@ -186,7 +207,7 @@ Response -
       "widget_url": "http://api.appsurfer.com/widget/37f7735d0-04d0-0130-ac48-00163sde4c2006"
     }
 
-### 1.4 Update App Details -
+### 1.4 Delete App -
 
 URL - /v1/publisher/apps/:app_uid
 
@@ -195,6 +216,11 @@ Method - DELETE
 Params - app_uid in url
 
 Use with care. This will delete the app and all history related with app including number of sessions played and other stats. This can't be undone.
+
+E.g - 
+
+    curl -X DELETE -H "auth_key: c0c40350-0a16-0130-850c-asdfasdfasdf"
+                      "http://api.appsurfer.com/v1/publisher/apps/f9dce550-0sdfa3a-sdf30-e0e8-12313d053c1b"
 
 
 ## 2. Get widget code -
@@ -223,6 +249,11 @@ Params -
   </tr>
 </table>
 
+E.g.
+
+    curl -H "auth_key: c0c40350-0a16-0130-850c-22000a9d050a"
+            "http://api.appsurfer.com/v1/publisher/apps/f9dce550-0a3a-0130-e0e8-12313d053c1b/widget"
+
 Response - 
 
     {
@@ -250,6 +281,11 @@ Params -
     <td> type </td><td> string </td><td> Optional. Default is - surfit_small_hz. Other options include - surfit_hz, surfit_vt </td>
   </tr>
 </table>
+
+E.g.
+
+    curl -H "auth_key: c0c40350-0a16-0130-850c-22000a9d050a"
+            "http://api.appsurfer.com/v1/publisher/apps/f9dce550-0a3a-0130-e0e8-12313d053c1b/surfit_button"
 
 Response - 
 
