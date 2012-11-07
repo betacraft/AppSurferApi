@@ -188,7 +188,7 @@ Params -
     <td> default_layout </td><td> boolean </td><td> default - 0 i.e. portrait. This decides orientation of phone image in widget. Send 1 for landscape. </td>
   </tr>
   <tr>
-    <td> market_button </td><td> boolean </td><td> default - false. If true and app is present on google market, Download from market button will show up </td>
+    <td> market_button </td><td> boolean </td><td> Default - true. If false Download from market button won't show up </td>
   </tr>
   <tr>
 </table>
