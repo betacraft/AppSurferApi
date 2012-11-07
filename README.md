@@ -23,9 +23,9 @@ auth_key need to be sent in all request headers for authentication.
 
 ## 1. Add App -
 
-Uploading of APK happens in two steps - in first step, you should a request to appsurfer api and get signature and other params required for reqeusting to s3.  In second step, you have to directly upload the file to s3, all required things for successful upload will be available in response of first step. If file is successfully uploaded to s3, it will redirect again to AppSurfer app, on redirection validations will be done on apk file.
+Uploading of APK happens in two steps - in first step, you should send a request to appsurfer api and get signature and other params required for uploading file to s3.  In second step, you have to directly upload the file to s3, all required things for successful upload will be available in response of first step. If file is successfully uploaded to s3, it will redirect again to AppSurfer app, after which, validations will be done on apk file.
 
-If you want to change apk file for existing app, same steps should be followed except that - app_uid should be provided in first step request.
+If you want to change apk file for existing app, same steps should be followed except that - app_uid should be provided in first step.
 
 ### 1.1 Get Access Token - 
 
@@ -152,8 +152,7 @@ On successful upload, amazon will redirect to AppSurfer app. If apk passes all v
 
     {
       "success": true,
-      "app_uid": "cdb0e5b0-aef9-eeee-53ee-1230000041d3",
-      "widget_url": "http://www.appsurfer.com/widget/cdb0e5b0-aef9-eeee-53ee-1230000041d3"
+      "app_uid": "cdb0e5b0-aef9-eeee-53ee-1230000041d3"
     }
 
 If validation fails on apk, response will contain success false with all validation errors.
@@ -171,13 +170,13 @@ Params -
     <th>Param </th><th> Type </th><th> Description </th>
   </tr>
   <tr>
-    <td>app_uid </td><td> string </td><td> uid found from Apk upload request. </td>
+    <td>app_uid </td><td> string </td><td> uid found from Apk upload request. Should be present in url at :app_uid</td>
   </tr>
   <tr>
     <td> name </td><td> string </td><td> App's name. </td>
   </tr>
   <tr>
-    <td> description </td><td> text </td><td> optional </td>
+    <td> description </td><td> text </td><td> Optional app description </td>
   </tr>
   <tr>
     <td> published </td><td> boolean </td><td> Default - true. If set to false, app will only be usable from sandbox mode </td>
@@ -203,8 +202,7 @@ Response -
   
     {
       "success": true,
-      "app_uid": "37f7sadf7350-04d0-0130-ac48-00163e4c2006",
-      "widget_url": "http://api.appsurfer.com/widget/37f7735d0-04d0-0130-ac48-00163sde4c2006"
+      "app_uid": "37f7sadf7350-04d0-0130-ac48-00163e4c2006"
     }
 
 ### 1.4 Delete App -
