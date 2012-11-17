@@ -144,6 +144,8 @@ Make sure that client making request should be able to follow redirects. On POST
                  -F "file=@githubs.apk"\
                  -L "https://droidcloud.s3.amazonaws.com"
 
+**Important - params needs to be ordered in same order as received in get_token request.
+
 Response - 
 
 If any http error happens while uploading to s3, it will indicate it with proper http response code without redirect to appsurfer app.
