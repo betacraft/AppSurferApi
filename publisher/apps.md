@@ -1,4 +1,3 @@
-
 ## 1. Add App -
 
 Uploading of APK happens in two steps - in first step, you should send a request to appsurfer api and get signature and other params required for uploading file to s3.  In second step, you have to directly upload the file to s3, all required things for successful upload will be available in response of first step. If file is successfully uploaded to s3, it will redirect again to AppSurfer app, after which, validations will be done on apk file.
