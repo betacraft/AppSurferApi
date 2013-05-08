@@ -4,7 +4,7 @@
 
 Using this API app publishers can add, edit or remove apps from AppSurfer.
 
-Base URL - https://api.appsurfer.com/v1/publisher
+Base URL - https://api.appsurfer.com
 
 ## Authentication - 
 
