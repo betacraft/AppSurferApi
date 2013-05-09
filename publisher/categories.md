@@ -1,4 +1,4 @@
-## 1. Get categories-
+### 1. Get Categories-
 
 URL - /v1/publisher/categories
 
@@ -6,7 +6,7 @@ Method - GET
 
 E.g.
 
-    curl -H "auth_key: c0c40350-0a16-0130-850c-22000a9d050a"
+    curl -H "auth_key:c0c40350-0a16-0130-850c-22000a9d050a" -H "content-type:application/json"
             "http://api.appsurfer.com/v1/publisher/categories"
 
 Response - 
