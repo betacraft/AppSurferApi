@@ -26,7 +26,7 @@ Params -
 
 E.g.
 
-    curl -H "auth_key: c0c40350-0a16-0130-850c-22000a9d050a"
+    curl -H "auth_key: c0c40350-0a16-0130-850c-22000a9d050a" -H "content-type:application/json"
             "http://api.appsurfer.com/v1/publisher/apps?category=1&page=1"
 
 Response - 
@@ -121,7 +121,7 @@ Params -
 
 E.g.
 
-    curl -H "auth_key: c0c40350-0a16-0130-850c-22000a9d050a"
+    curl -H "auth_key: c0c40350-0a16-0130-850c-22000a9d050a" -H "content-type:application/json"
             "http://api.appsurfer.com/v1/publisher/apps/03b214f0-3ac1-012f-1888-12313b036578"
 
 Response - 
@@ -164,7 +164,7 @@ Params -
 
 E.g.
 
-    curl -H "auth_key: c0c40350-0a16-0130-850c-22000a9d050a"
+    curl -H "auth_key: c0c40350-0a16-0130-850c-22000a9d050a" -H "content-type:application/json"
             "http://api.appsurfer.com/v1/publisher/apps/package/com.sudokuplus"
 
 Response - 
@@ -212,7 +212,7 @@ Params -
 
 E.g.
 
-    curl -H "auth_key: c0c40350-0a16-0130-850c-22000a9d050a"
+    curl -H "auth_key: c0c40350-0a16-0130-850c-22000a9d050a" -H "content-type:application/json"
             "http://api.appsurfer.com/v1/publisher/apps/f9dce550-0a3a-0130-e0e8-12313d053c1b/widget"
 
 Response - 
@@ -245,7 +245,7 @@ Params -
 
 E.g.
 
-    curl -H "auth_key: c0c40350-0a16-0130-850c-22000a9d050a"
+    curl -H "auth_key: c0c40350-0a16-0130-850c-22000a9d050a" -H "content-type:application/json"
             "http://api.appsurfer.com/v1/publisher/apps/f9dce550-0a3a-0130-e0e8-12313d053c1b/surfit_button"
 
 Response - 
