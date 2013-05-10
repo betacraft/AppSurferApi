@@ -12,7 +12,7 @@ Every request should have
 
     Content-Type:application/json
     
-in there headers.
+in their headers.
 
 
 ## Authentication - 
