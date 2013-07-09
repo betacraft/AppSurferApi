@@ -19,4 +19,4 @@ in their headers.
 
 auth_key need to be sent in all request headers for authentication.
 
-    auth_key:4e0e6c8d6fb68b41b71677bfc1221dd72b4a1565
+    auth_key:AUTH_KEY_FROM_APPSURFER
