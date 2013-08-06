@@ -2,11 +2,9 @@
 
 ## Overview - 
 
-Using this API app publishers can add, edit or remove apps from AppSurfer.
+AppSurfer REST API can be used by deveopers to push new apps to AppSurfer. It also provides code for customised widget code to embed as well as SurfIt button embed codes.
 
-Base URL - https://api.appsurfer.com
-
-All Api take JSON data and respond with JSON data.
+All API take JSON data and respond with JSON.
 
 Every request should have 
 
@@ -14,9 +12,14 @@ Every request should have
     
 in their headers.
 
+Base URL for all request should be 
 
-## Authentication - 
+    https://api.appsurfer.com
 
-auth_key need to be sent in all request headers for authentication.
 
-    auth_key:AUTH_KEY_FROM_APPSURFER
+## Main Sections -
+
+- Authentication
+- Apps
+- Widgets
+- SurfIt buttons
