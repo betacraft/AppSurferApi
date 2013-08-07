@@ -1,4 +1,4 @@
-### Get Surf it button code - 
+## Get Surf it button code - 
 
 URL - /v1/publisher/apps/:app_uid/surfit_button/:type
 
