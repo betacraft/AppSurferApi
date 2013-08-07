@@ -2,10 +2,18 @@
 
 AppSurfer API provides ways for creating, editing and updating apps on AppSurfer apps.
 
+Using API can be used for - 
 
-## 3. Get apps -
+- [Get apps](#1-get-apps)
+- [Create app](#2-create-app)
+- [Update app](#3-update-app)
+- [Get app](#4-get-app)
+- [Delete app](#5-delete-app)
+ 
 
-This will return all the apps that are owned by a developer.
+## 1. Get apps
+
+This will return list of all the apps that are owned by a developer.
 
 URL - /v1/publisher/apps
 
@@ -104,7 +112,7 @@ Response -
     }
 
 
-## 2. Create App -
+## 2. Create App
 
 For creating an app on AppSurfer, it requires two steps - 
 
@@ -255,7 +263,9 @@ If validation fails on apk, response will be as below -
 
 
 
-## 3 Update App -
+## 3 Update App
+
+
 
 
 URL - /v1/publisher/apps/:app_uid
@@ -275,7 +285,7 @@ Params -
     <td> name </td><td> string </td><td> App's name. </td>
   </tr>
   <tr>
-    <td> description </td><td> text </td><td> Optional app description </td>
+    <td> description </td><td> text </td><td> Optional app description. </td>
   </tr>
   <tr>
     <td> published </td><td> boolean </td><td> Default - true. If set to false, app will only be usable from sandbox mode </td>
@@ -285,9 +295,6 @@ Params -
   </tr>
   <tr>
     <td> default_layout </td><td> boolean </td><td> default - 0 i.e. portrait. This decides orientation of phone image in widget. Send 1 for landscape. </td>
-  </tr>
-  <tr>
-    <td> market_button </td><td> boolean </td><td> Default - true. If false Download from market button won't show up </td>
   </tr>
   <tr>
 </table>
@@ -307,11 +314,12 @@ Response -
 
 
 
+## 4. Get app
 
+### 4.1 Using UID:
 
-## 4. Get app details -
+Returns details of a ap.
 
-### 2.1 Using uid:
 
 URL - /v1/publisher/apps/:app_uid
 
@@ -354,7 +362,8 @@ Response -
         }
     }
     
-### 2.2 Using package_name:
+
+### 4.2 Using package_name:
 
 URL - /v1/publisher/apps/package/:package_name
 
@@ -398,7 +407,9 @@ Response -
     }
 
 
-## 3 Delete App -
+## 5 Delete App
+
+Use with care. This will delete the app and all history related with app including number of sessions played and other stats. This can't be undone.
 
 URL - /v1/publisher/apps/:app_uid
 
@@ -406,7 +417,6 @@ Method - DELETE
 
 Params - app_uid in url
 
-Use with care. This will delete the app and all history related with app including number of sessions played and other stats. This can't be undone.
 
 E.g - 
 
