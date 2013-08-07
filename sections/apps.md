@@ -2,7 +2,7 @@
 
 AppSurfer API provides ways for creating, editing and updating apps on AppSurfer apps.
 
-Using API can be used for - 
+Apps API can be used for - 
 
 - [Get apps](#1-get-apps)
 - [Create app](#2-create-app)
@@ -116,7 +116,7 @@ Response -
 
 For creating an app on AppSurfer, it requires two steps - 
 
-- Getting temprory authentication for s3
+- Getting temporary authentication for s3
 - Uploading apk file to s3
 
 You just need to follow these two steps and upload apk to create app on AppSurfer.
@@ -190,7 +190,7 @@ Params -
   <tr>
     <td>key</td>
     <td>string</td>
-    <td>Required. Get it in access_token API</td>
+    <td>Required. Found from app upload step1 API</td>
   </tr>
   <tr>
     <td>AWSAccessKeyId</td>
@@ -318,7 +318,7 @@ Response -
 
 ### 4.1 Using UID:
 
-Returns details of a ap.
+Returns details of a app.
 
 
 URL - /v1/publisher/apps/:app_uid
