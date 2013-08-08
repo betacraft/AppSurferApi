@@ -410,50 +410,6 @@ Response -
     }
     
 
-### 5.2 Using package_name:
-
-URL - /v1/publisher/apps/package/:package_name
-
-Method - GET
-
-Params -
-
-<table>
-  <tr>
-    <td>Param </td>
-    <td> Type </td>
-    <td> Description </td>
-  </tr>
-  <tr>
-    <td> package_name </td>
-    <td> string </td>
-    <td> needs to be present in URL</td>
-  </tr>
-</table>
-
-E.g.
-
-    curl -H "auth_key: c0c40350-0a16-0130-850c-22000a9d050a" -H "content-type:application/json"
-            "http://api.appsurfer.com/v1/publisher/apps/package/com.sudokuplus"
-
-Response - 
-
-    {
-        "app": {
-          "name": "SuDoKu",
-          "tagline": "World's Fastest Sudoku Solver",
-          "description": "Experience the Best Sudoku Puzzle on the Market - After close to Million Sudoku Downloads on Nokia Store, the Original Sudoku Plus will floor you! Here are few things to watch out for in Sudoku Plus:\r\n1.Worlds fastest Sudoku Solver\r\n2.Track & improve your Guesses\r\n3.Various levels of difficulties\r\n4. Best Sudoku User Interface",
-          "logo_url": "https://droidcloud-dev.s3.amazonaws.com/images/4/seventy/ico_sp_96x96.png?1355389151",
-          "google_market_url": "https://play.google.com/store/apps/details?id=com.sudokuplus&rdid=com.sudokuplus&rdot=1",
-          "screenshots": [
-              "https://droidcloud-dev.s3.amazonaws.com/images/257/screenshot/open-uri20121003-2-15rw4zn?1349265216",
-              "https://droidcloud-dev.s3.amazonaws.com/images/258/screenshot/open-uri20121003-2-1pzqhy0?1349265217"
-          ],
-          "publisher": "Webonise Labs"
-        }
-    }
-
-
 ## 6 Delete App
 
 Use with care. This will delete the app and all history related with app including number of sessions played and other stats. This can't be undone.
