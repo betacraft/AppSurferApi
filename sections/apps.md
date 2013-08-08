@@ -128,7 +128,7 @@ Params -
     <th> Description </th>
   </tr>
   <tr>
-    <td> *name </td> 
+    <td> name </td> 
     <td> string </td>
     <td> Required. App name required to generate access_token </td>
   <tr>
@@ -152,12 +152,16 @@ Params -
 
 E.g. - 
 
-
+    curl https://api.appsurfer.com/v1/publisher/apps -X POST -H 'content-type:application/json' -H 'auth_key:8f9c6ca0-353b-012f-177f-12313b036578' -d '{"name":"test"}'
 
 
 Response - 
 
-
+    { 
+      "success":true,
+      "message":"App Created successfully.",
+      "app_uid":"63d93ed0-e249-0130-681b-441ea1e48f44"
+    }
 
 
 ## 3. Update Apk
