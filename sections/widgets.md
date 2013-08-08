@@ -1,5 +1,8 @@
 ## 3. Get widget code -
 
+AppSurfer widgets come in two types as - widgets for mobile size and tablet size. Both these types can be customised with various options as per need.
+
+
 URL - /v1/publisher/apps/:app_uid/widget
 
 Method - GET
@@ -21,6 +24,29 @@ Params -
     <td> autoplay </td>
     <td> boolean </td>
     <td> Default false. </td>
+  </tr>
+    <tr>
+    <td> widget_type </td>
+    <td> phone / tablet </td>
+    <td> - phone: returns widget type phone which takes maximum size of 620px620px or less depending on cusmisation. This will be default option. <br/><br/>
+    - tablet: returns widget type tablet which takes minimum size of 600px*600px. If given more height and width, tablet widget's can utilize that. </td>
+  </tr>
+  <tr>
+    <td> orientation </td>
+    <td> landscape / portrait </td>
+    <td> Depending on default_orientation given for app, it will default to landscape or portrait. <br/><br/>
+    - landscape: phone loads up in landscape orientation <br/><br/>
+    - portrait: phone loads up in portrait orientation </td>
+  </tr>
+  <tr>
+    <td> controls_needed </td>
+    <td> boolean </td>
+    <td> Default is false. If set to true, it will show buttons for 'GPS data send', 'Toggle Orientation', 'Start Tablet Mode', 'Toggle Accelerometer mode'. Recommeded if app requires any of features like gps data or accelerometer input. </td>
+  </tr>
+  <tr>
+    <td> header_needed </td>
+    <td> boolean </td>
+    <td> Default if false. If set to true, it will add an info bar to widget with app logo, app name, publisher name and buttons like - 'share' and 'install'.  </td>
   </tr>
 </table>
 
