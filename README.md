@@ -19,7 +19,7 @@ Base URL for all request should be
 
 ## Main Sections -
 
-- Authentication
-- Apps
-- Widgets
-- SurfIt buttons
+- [Authentication](https://github.com/RainingClouds/AppSurferApi/blob/master/sections/authentication.md)
+- [Apps](https://github.com/RainingClouds/AppSurferApi/blob/master/sections/apps.md)
+- [Widgets](https://github.com/RainingClouds/AppSurferApi/blob/master/sections/widgets.md)
+- [SurfIt buttons](https://github.com/RainingClouds/AppSurferApi/blob/master/sections/surfit_buttons.md)
