@@ -1,5 +1,7 @@
 ## Get Surf it button code - 
 
+SurfIt buttons can be embedded on the pages with less space for full widgets. These buttons open up a lightbox for app trial.
+
 URL - /v1/publisher/apps/:app_uid/surfit_button/:type
 
 Method - GET
