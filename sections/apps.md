@@ -6,9 +6,10 @@ Apps API can be used for -
 
 - [Get apps](#1-get-apps)
 - [Create app](#2-create-app)
-- [Update app](#3-update-app)
-- [Get app](#4-get-app)
-- [Delete app](#5-delete-app)
+- [Update apk](#3-update-app)
+- [Update app](#4-update-app)
+- [Get app details](#5-get-app-details)
+- [Delete app](#6-delete-app)
  
 
 ## 1. Get apps
@@ -114,17 +115,61 @@ Response -
 
 ## 2. Create App
 
-For creating an app on AppSurfer, it requires two steps - 
+Path - /v1/publisher/apps
+
+Method - POST
+
+Params - 
+
+<table>
+  <tr>
+    <th> Param </th>
+    <th> Type </th>
+    <th> Description </th>
+  </tr>
+  <tr>
+    <td> *name </td> 
+    <td> string </td>
+    <td> Required. App name required to generate access_token </td>
+  <tr>
+  <tr>
+    <td> description </td> 
+    <td> text </td>
+    <td> Optional </td>
+  <tr>
+  <tr>
+    <td> opt_for_showcase </td> 
+    <td> boolean </td>
+    <td> Default is false. If set to true, and if app is present on google market, it will be published on AppSurfer showcase as well. </td>
+  <tr>
+  <tr>
+    <td> publisher_name </td> 
+    <td> string </td>
+    <td> Few widget types may require this to be shown on widgets. </td>
+  <tr>
+</table>
+
+
+E.g. - 
+
+
+
+
+Response - 
+
+
+
+
+## 3. Update Apk
+
+For updating apk for an app on AppSurfer, it requires two steps - 
 
 - Getting temporary authentication for s3
 - Uploading apk file to s3
 
-You just need to follow these two steps and upload apk to create app on AppSurfer.
+Update apk API can be used for first time apk upload of an app or for updating apk of existing app.
 
-If you want to change apk file for existing app, same steps should be followed except that - app_uid should be provided in first step.
-
-
-### 2.1 Get Temporary authentication for s3 - 
+### 3.1 Get Temporary authentication for s3 - 
 
 Path - /v1/publisher/apps/get_token
 
@@ -150,7 +195,7 @@ Params -
   <tr> 
     <td>app_uid </td>
     <td>string </td>
-    <td>Required if existing app apk needs be updated. </td>
+    <td>Required</td>
   </tr>
 </table>
 
@@ -173,7 +218,7 @@ Response -
      }
 
 
-### 2.2 Upload File to s3 - 
+### 3.2 Upload File to s3 - 
 
 URL - Found from above step as `s3_url`
 
@@ -263,9 +308,7 @@ If validation fails on apk, response will be as below -
 
 
 
-## 3 Update App
-
-
+## 4 Update App
 
 
 URL - /v1/publisher/apps/:app_uid
@@ -314,9 +357,9 @@ Response -
 
 
 
-## 4. Get app
+## 5. Get app details
 
-### 4.1 Using UID:
+### 5.1 Using UID:
 
 Returns details of a app.
 
@@ -363,7 +406,7 @@ Response -
     }
     
 
-### 4.2 Using package_name:
+### 5.2 Using package_name:
 
 URL - /v1/publisher/apps/package/:package_name
 
@@ -407,7 +450,7 @@ Response -
     }
 
 
-## 5 Delete App
+## 6 Delete App
 
 Use with care. This will delete the app and all history related with app including number of sessions played and other stats. This can't be undone.
 
