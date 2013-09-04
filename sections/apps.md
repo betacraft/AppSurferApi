@@ -160,7 +160,8 @@ Response -
     { 
       "success":true,
       "message":"App Created successfully.",
-      "app_uid":"63d93ed0-e249-0130-681b-441ea1e48f44"
+      "app_uid":"63d93ed0-e249-0130-681b-441ea1e48f44",
+      "emulator_url" : "https://www.appsurfer.com/apps/emulator/08bdaee0-6d0e-0130-2a10-1231381a9bd8"
     }
 
 
