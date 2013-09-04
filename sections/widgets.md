@@ -1,4 +1,4 @@
-## 3. Get widget code -
+## Get widget code -
 
 AppSurfer widgets come in two types as - widgets for mobile size and tablet size. Both these types can be customised with various options as per need.
 
