@@ -6,7 +6,7 @@ Apps API can be used for -
 
 - [Get apps](#1-get-apps)
 - [Create app](#2-create-app)
-- [Update apk](#3-update-app)
+- [Update apk](#3-update-apk)
 - [Update app](#4-update-app)
 - [Get app details](#5-get-app-details)
 - [Delete app](#6-delete-app)
@@ -206,7 +206,7 @@ Params -
 
 E.g.
 
-    curl -H "auth_key: c0c40350-asdf-0130-850c-22000a9d050a" "http://api.appsurfer.com/v1/publisher/apps/get_token?name=Githubs&apk_name=githubs.apk"
+    curl -H "auth_key: c0c40350-asdf-0130-850c-22000a9d050a" "http://api.appsurfer.com/v1/publisher/apps/get_token?name=Githubs&apk_name=githubs.apk&app_uid=cdb0e5b0-eeee-012f-53be-1231400041d3"
 
 
 Response - 
