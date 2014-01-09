@@ -147,6 +147,11 @@ Params -
     <td> string </td>
     <td> Few widget types may require this to be shown on widgets. </td>
   <tr>
+  <tr>
+    <td> locale </td> 
+    <td> string </td>
+    <td> Optional. For e.g. en_US, fr_CA </td>
+  <tr>
 </table>
 
 
@@ -344,6 +349,11 @@ Params -
   <tr>
     <td> default_layout </td><td> boolean </td><td> default - 0 i.e. portrait. This decides orientation of phone image in widget. Send 1 for landscape. </td>
   </tr>
+  <tr>
+  <tr>
+    <td> locale </td> 
+    <td> string </td>
+    <td> Optional. For e.g. en_US, fr_CA </td>
   <tr>
 </table>
 
