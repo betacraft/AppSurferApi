@@ -48,6 +48,11 @@ Params -
     <td> boolean </td>
     <td> Default if false. If set to true, it will add an info bar to widget with app logo, app name, publisher name and buttons like - 'share' and 'install'.  </td>
   </tr>
+  <tr>
+    <td> locale </td>
+    <td> string </td>
+    <td> Optional. For e.g. en_US, fr_CA. Sets locale for this particular widget.  </td>
+  </tr>
 </table>
 
 E.g.
