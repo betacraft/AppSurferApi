@@ -288,7 +288,7 @@ E.g.
 Make sure that client making upload request should be able to follow redirects. On POST to s3, it does 303 GET redirect to AppSurfer app.
 
     curl -X POST -F "key=tmp/228/github.apk"\
-                 -F "AWSAccessKeyId=AKIsdAJTL35BC2OZ7FZublisher/apps/uploaded/228?apk_name=githubs.apk&app_name=Githubs"\
+                 -F "AWSAccessKeyId=AKIsdAJTL35BC2OZ7FZ"\
                  -F "bucket=droidcloud"\
                  -F "acl=private"\
                  -F "policy=esyJleHBpcmF0aW9uIjoiMjAxMi0xMS0wNlQxMTozMzoxNy4wMDBaIiwiY29uZGl0aW9ucyI6W3siYnVja2V0IjoiZHJvaWRjbG91ZC1zdGFnaW5nIn0seyJrZXkiOiJ0bXAvMjI4L2dpdGh1Yi5hcGsifSx7ImFjbCI6InByaXZhdGUifSx7InN1Y2Nlc3NfYWN0aW9uX3JlZGlyZWN0IjoiaHR0cDovL3ByZWFwaS5hcHBzdXJmZXIuY29tL3YxL3B1Ymxpc2hlci9hcHBzL3VwbG9hZGVkLzIyOD9hcGtfbmFtZT1naXRodWIuYXBrJmFwcF9uYW1lPUdpdGh1YiJ9XX0="\
